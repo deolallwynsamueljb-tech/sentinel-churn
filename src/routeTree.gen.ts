@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PredictRouteImport } from './routes/predict'
 import { Route as ModelsRouteImport } from './routes/models'
+import { Route as ImpactRouteImport } from './routes/impact'
 import { Route as DataLabRouteImport } from './routes/data-lab'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -22,6 +23,11 @@ const PredictRoute = PredictRouteImport.update({
 const ModelsRoute = ModelsRouteImport.update({
   id: '/models',
   path: '/models',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpactRoute = ImpactRouteImport.update({
+  id: '/impact',
+  path: '/impact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DataLabRoute = DataLabRouteImport.update({
@@ -38,12 +44,14 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/data-lab': typeof DataLabRoute
+  '/impact': typeof ImpactRoute
   '/models': typeof ModelsRoute
   '/predict': typeof PredictRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/data-lab': typeof DataLabRoute
+  '/impact': typeof ImpactRoute
   '/models': typeof ModelsRoute
   '/predict': typeof PredictRoute
 }
@@ -51,20 +59,22 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/data-lab': typeof DataLabRoute
+  '/impact': typeof ImpactRoute
   '/models': typeof ModelsRoute
   '/predict': typeof PredictRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/data-lab' | '/models' | '/predict'
+  fullPaths: '/' | '/data-lab' | '/impact' | '/models' | '/predict'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/data-lab' | '/models' | '/predict'
-  id: '__root__' | '/' | '/data-lab' | '/models' | '/predict'
+  to: '/' | '/data-lab' | '/impact' | '/models' | '/predict'
+  id: '__root__' | '/' | '/data-lab' | '/impact' | '/models' | '/predict'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DataLabRoute: typeof DataLabRoute
+  ImpactRoute: typeof ImpactRoute
   ModelsRoute: typeof ModelsRoute
   PredictRoute: typeof PredictRoute
 }
@@ -83,6 +93,13 @@ declare module '@tanstack/react-router' {
       path: '/models'
       fullPath: '/models'
       preLoaderRoute: typeof ModelsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/impact': {
+      id: '/impact'
+      path: '/impact'
+      fullPath: '/impact'
+      preLoaderRoute: typeof ImpactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/data-lab': {
@@ -105,6 +122,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DataLabRoute: DataLabRoute,
+  ImpactRoute: ImpactRoute,
   ModelsRoute: ModelsRoute,
   PredictRoute: PredictRoute,
 }
