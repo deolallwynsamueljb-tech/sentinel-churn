@@ -33,11 +33,15 @@ export const Route = createRootRoute({
       { title: "ChurnIQ — Customer Churn Intelligence by Deol Allwyn Samuel J.B" },
       { name: "description", content: "Enterprise-grade customer churn prediction platform with ML-powered risk scoring, retention insights, and business impact analysis." },
       { name: "author", content: "Deol Allwyn Samuel J.B" },
-      { property: "og:title", content: "ChurnIQ — Customer Churn Intelligence" },
-      { property: "og:description", content: "ML-powered churn prediction · Built by Deol Allwyn Samuel J.B · CIT VLSI" },
+      { property: "og:title", content: "ChurnIQ — Customer Churn Intelligence by Deol Allwyn Samuel J.B" },
+      { property: "og:description", content: "Enterprise-grade customer churn prediction platform with ML-powered risk scoring, retention insights, and business impact analysis." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "ChurnIQ — Customer Churn Intelligence by Deol Allwyn Samuel J.B" },
+      { name: "twitter:description", content: "Enterprise-grade customer churn prediction platform with ML-powered risk scoring, retention insights, and business impact analysis." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ae349619-cf2d-4715-ab36-230ff2aa0c6b/id-preview-62624ee8--7133360e-2c56-4c2f-aa7f-8e4edb1345b2.lovable.app-1777575394850.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ae349619-cf2d-4715-ab36-230ff2aa0c6b/id-preview-62624ee8--7133360e-2c56-4c2f-aa7f-8e4edb1345b2.lovable.app-1777575394850.png" },
     ],
     links: [
       {
