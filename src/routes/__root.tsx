@@ -1,6 +1,7 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { AppShell } from "@/components/AppShell";
 
 function NotFoundComponent() {
   return (
@@ -29,11 +30,11 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "ChurnIQ — Customer Churn Intelligence by Deol Allwyn Samuel J.B" },
+      { name: "description", content: "Enterprise-grade customer churn prediction platform with ML-powered risk scoring, retention insights, and business impact analysis." },
+      { name: "author", content: "Deol Allwyn Samuel J.B" },
+      { property: "og:title", content: "ChurnIQ — Customer Churn Intelligence" },
+      { property: "og:description", content: "ML-powered churn prediction · Built by Deol Allwyn Samuel J.B · CIT VLSI" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
@@ -65,5 +66,5 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  return <Outlet />;
+  return <AppShell />;
 }
